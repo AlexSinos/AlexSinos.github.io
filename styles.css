@@ -66,6 +66,7 @@ a:hover {
   gap: 20px;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .project-preview {
