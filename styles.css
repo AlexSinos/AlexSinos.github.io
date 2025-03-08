@@ -26,8 +26,7 @@ img {
 /* CSS reset/Normalise */
 
 body {
-  background-image: url(images/marble-background.jpg);
-  background-attachment: local;
+
   display: flex;
   font-size: calc(0.4rem + 0.7vw);
   min-height: 100vh;
@@ -60,7 +59,9 @@ a:hover {
   padding: 1vw;
   flex:1;
   flex-direction: column;
-  justify-content: space-evenly
+  justify-content: space-evenly;
+  background-image: url(images/marble-background.jpg);
+  background-size: cover;
 }
 
 .text-container {
@@ -79,6 +80,7 @@ a:hover {
   align-items: center;
   overflow-x: scroll;
   scroll-behavior: smooth;
+
 }
 .projects::-webkit-scrollbar {
   display: none;
@@ -115,6 +117,15 @@ h1 {
 .main p, h1 {
   color: black;
   align-self: center;;
+}
+
+h1 {
+  text-shadow: 
+    2px 3px 4px rgb(56, 56, 56), 
+    -2px -2px 4px rgba(201, 201, 201, 0.6);
+  letter-spacing: 10px;
+  font-weight: 700;
+  color: rgb(0, 0, 0)
 }
 
 button {
