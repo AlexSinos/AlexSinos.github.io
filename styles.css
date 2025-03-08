@@ -59,18 +59,18 @@ a:hover {
   overflow: auto;
   padding: 1vw;
   flex:1;
+  flex-direction: column;
+  justify-content: space-evenly
 }
 
 .text-container {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  margin: auto;
-  max-width: 80vw;
-  max-height: 100%;
-  overflow: auto;
-  flex: 1;
+  align-items: center;
 }
 
 .projects {
@@ -88,7 +88,7 @@ a:hover {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-width: 600px;
+  min-width: 37vw;
   padding: calc(0.7vw + 1px);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -96,10 +96,8 @@ a:hover {
 }
 
 .project-preview img {
-  max-width: 100%;
   border-radius: 8px 8px 0 0;
   width: 100%;
-
 }
 
 .project-text {
@@ -108,4 +106,24 @@ a:hover {
   border-radius: 0 0 8px 8px;
   width: 100%;
   text-align: center;
+}
+
+h1 {
+  font-size: calc(1rem + 2vw);
+}
+
+.main p, h1 {
+  color: black;
+  align-self: center;;
+}
+
+button {
+  background-color: #d8d9cf;
+  border-radius: 5px;
+  color: black;
+}
+
+button:hover {
+  background-image: url(/images/marble-background.jpg);
+  box-shadow: 5px;
 }

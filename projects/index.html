@@ -17,7 +17,21 @@
       <a href="../contact">CONTACT</a>
     </div>
     <div class="main">
+      <h1> Projects </h1>
+      <p class="para"> A few of my projects, sorted by most recent. </p>
       <div class="projects">
+        <div class="project-preview">
+          <a href="/calculator/">
+            <img src="../images/calculator.png" alt="picture of phone using calculator"
+          /></a>
+          <div class="project-text">A basic iPhone calculator clone</div>
+        </div>
+        <div class="project-preview">
+          <a href="/etch-a-sketch">
+            <img src="../images/etch-a-sketch.jpg" alt="etch-a-sketch picture"
+            /></a>
+          <div class="project-text">Etch-a-sketch with an adjustable size, various colours and opacity</div>
+        </div>
         <div class="project-preview">
           <a href="/rock-paper-scissors">
             <img src="../images/room.jpg" alt="picture of game"
@@ -41,18 +55,14 @@
           /></a>
           <div class="project-text">A website made to showcase an artist.</div>
         </div>
-        <div class="project-preview">
-          <a href="/etch-a-sketch">
-            <img src="../images/etch-a-sketch.jpg" alt="etch-a-sketch picture"
-            /></a>
-          <div class="project-text">Etch-a-sketch with an adjustable size, various colours and opacity</div>
-        </div>
-        <div class="project-preview">
-          <a href="/calculator/">
-            <img src="../images/calculator.png" alt="picture of phone using calculator"
-          /></a>
-          <div class="project-text">A basic iPhone calculator clone</div>
-      </div>
+
   </body>
-  <script src="../script.js"></script>
+  <script>
+    const projects = document.querySelector(".projects")
+
+    projects.addEventListener('wheel', (event) => {
+        projects.scrollLeft += event.deltaY;
+        event.preventDefault()
+    })
+    </script>
 </html>

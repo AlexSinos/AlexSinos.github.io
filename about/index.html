@@ -17,11 +17,25 @@
         <a href="../contact">CONTACT</a>
       </div>
     <div class="main">
-      <p class="text-container">
+      <div class="text-container">
+        <p>
         Hey there! I’m a passionate web developer on a mission to create user-friendly digital experiences. Currently, I’m studying IT and Computing at The Open University while diving deeper into the world of code. My toolkit includes HTML, CSS, JavaScript, and Python, and I’m actively sharpening my skills through The Odin Project.
         I thrive on challenges and love learning new technologies, and I’m eager to bring my creative problem-solving skills to a dynamic team. I’m actively seeking work or internship opportunities where I can contribute my knowledge while growing alongside experienced professionals.
         Feel free to explore my GitHub to see my projects, and let’s connect on LinkedIn! I’m excited to explore how we can collaborate to build amazing things together!
       </p>
+      <button>Download CV</button>
     </div>
+    <script>
+    const downloadButton = document.querySelector("button")
+
+      downloadButton.addEventListener('click', () => {
+          const link = document.createElement('a')
+          link.href ='Alex-Sinos-CV.pdf'
+          link.download = 'Alex-Sinos-CV.pdf'
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+          })
+          </script>
   </body>
 </html>
