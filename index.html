@@ -4,18 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-    <title>Alex Sinos - Web Developer & Designer.</title>
-    <meta name="description" content="I'm Alex Sinos, an aspiring web developer and IT student with a knack for building innovative projects. Check out my portfolio, learn about my work, and let's connect!">
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    
+    <title>Projects</title>
   </head>
   <body>
     <div class="banner">
-      <a href=""> <img src="images/logo.png" alt="Alex Sinos logo"/> </a>
-      <a href="projects/">PROJECTS</a>
-      <a href="about/">ABOUT</a>
-      <a href="contact/">CONTACT</a>
+      <div class="top-half">
+        <a href="../" class="logo"> <img src="../images/logo.png" alt="Alex Sinos logo"/> </a>
+        <a href="../projects">PROJECTS</a>
+        <a href="../about">ABOUT</a>
+        <a href="../contact">CONTACT</a>
+      </div>
+      <div class="bottom-half">
+        <button class="light-button">🌑</button>
+      </div>
     </div>
-    <div class="main"></div>
+    <div class="main">
+    </div>
   </body>
+  <script>
+    const lightButton = document.querySelector(".light-button");
+    const root = document.documentElement;
+    const logo = document.querySelector(".logo")
+
+    function changeTheme() {
+      const isDark = root.classList.toggle('dark') 
+      lightButton.textContent = isDark ? "☀️" : "🌑";
+      logo.classList.toggle('inverted')
+    }
+
+    lightButton.addEventListener('click', changeTheme)
+    </script>
 </html>

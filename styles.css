@@ -32,6 +32,17 @@ img {
   --background-image: url(../images/marble-background.jpg)
 
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #141414;
+    --text-color: #FAF9F6;
+    --lighting-button-color: #FAF9F6;
+    --background-image: url(images/inverted-marble-background.jpg);
+  }
+  .logo {
+    filter: invert(1);
+  }
+}
 body {
   display: flex;
   font-size: calc(0.4rem + 0.7vw);
@@ -43,9 +54,7 @@ body {
   --background-color:#141414;
   --text-color: #FAF9F6;
   --lighting-button-color: #FAF9F6;
-  --logo: invert(../images/logo.png);
   --background-image: url(images/inverted-marble-background.jpg);
-
 }
 
 .logo {
