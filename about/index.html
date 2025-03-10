@@ -11,23 +11,33 @@
   <body>
     <body>
       <div class="banner">
-        <a href="../"> <img src="../images/logo.png" alt="Alex Sinos logo"/> </a>
-        <a href="../projects">PROJECTS</a>
-        <a href="../about">ABOUT</a>
-        <a href="../contact">CONTACT</a>
+        <div class="top-half">
+          <a href="../" class="logo"> <img src="../images/logo.png" alt="Alex Sinos logo"/> </a>
+          <a href="../projects">PROJECTS</a>
+          <a href="../about">ABOUT</a>
+          <a href="../contact">CONTACT</a>
+        </div>
+        <div class="bottom-half">
+          <button class="light-button">🌑</button>
+        </div>
       </div>
     <div class="main">
       <div class="text-container">
         <p>
-        Hey there! I’m a passionate web developer on a mission to create user-friendly digital experiences. Currently, I’m studying IT and Computing at The Open University while diving deeper into the world of code. My toolkit includes HTML, CSS, JavaScript, and Python, and I’m actively sharpening my skills through The Odin Project.
-        I thrive on challenges and love learning new technologies, and I’m eager to bring my creative problem-solving skills to a dynamic team. I’m actively seeking work or internship opportunities where I can contribute my knowledge while growing alongside experienced professionals.
-        Feel free to explore my GitHub to see my projects, and let’s connect on LinkedIn! I’m excited to explore how we can collaborate to build amazing things together!
-      </p>
-      <button>Download CV</button>
-    </div>
+          Hey there! I am a passionate web developer on a mission to create user-friendly digital experiences. Currently, I’m studying IT and Computing at The Open University while diving deeper into the world of code. My toolkit includes HTML, CSS, JavaScript, and Python, and I’m actively sharpening y skills through The Odin Project.
+        </p>
+        <br>
+        <p>
+          I thrive on challenges and love learning new technologies, and I’m eager to bring my creative problem-solving skills to a dynamic team. I’m actively seeking work or internship opportunities where I can contribute my knowledge while growing alongside experienced professionals.
+        </p>
+        <br>
+        <p>
+          Feel free to explore my GitHub to see my projects, and let’s connect on LinkedIn! I’m excited to explore how we can collaborate to build amazing things together!
+        </p>
+        <button id="download-button">Download CV</button>
+      </div>
     <script>
-    const downloadButton = document.querySelector("button")
-
+      const downloadButton = document.querySelector("#download-button")
       downloadButton.addEventListener('click', () => {
           const link = document.createElement('a')
           link.href = '../Alex-Sinos-CV.pdf'
@@ -36,6 +46,16 @@
           link.click()
           document.body.removeChild(link)
           })
-          </script>
+            const lightButton = document.querySelector(".light-button");
+      const root = document.documentElement;
+      const logo = document.querySelector(".logo")
+
+      function changeTheme() {
+        const isDark = root.classList.toggle('dark') 
+        lightButton.textContent = isDark ? "☀️" : "🌑";
+        logo.classList.toggle('inverted')
+      }
+      lightButton.addEventListener('click', changeTheme)
+    </script>
   </body>
 </html>
