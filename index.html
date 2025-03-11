@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
-    
-    <title>Projects</title>
+    <head>
+      <link rel="preload" as="image" href="/images/marble-background.jpg">
+      <link rel="preload" as="image" href="/images/inverted-marble-background.jpg">
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../styles.css" />
+      <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <title>HOME</title>
   </head>
   <body>
     <div class="banner">
@@ -28,13 +30,23 @@
     const lightButton = document.querySelector(".light-button");
     const root = document.documentElement;
     const logo = document.querySelector(".logo")
-
+    const currentTheme = localStorage.getItem('theme')
+    if (currentTheme === 'dark') {
+        root.classList.add('dark');
+        logo.classList.add('inverted');
+        lightButton.textContent = '☀️';
+    }
     function changeTheme() {
       const isDark = root.classList.toggle('dark') 
       lightButton.textContent = isDark ? "☀️" : "🌑";
-      logo.classList.toggle('inverted')
+      logo.classList.toggle('inverted');
+      let theme = 'light';
+      if (root.classList.contains('dark')) {
+        theme = 'dark';
+      }
+      localStorage.setItem('theme', theme);
     }
 
     lightButton.addEventListener('click', changeTheme)
-    </script>
+  </script>
 </html>

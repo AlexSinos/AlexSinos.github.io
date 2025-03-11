@@ -1,3 +1,4 @@
+/* CSS normalise/reset */
 @import url("modern-normalize.css");
 
 :root {
@@ -23,51 +24,54 @@ img {
   max-inline-size: 100%;
 }
 
-/* CSS reset/Normalise */
+/* Dark Mode */
 
 :root {
   --background-color: #FAF9F6;
   --text-color: #454545;
-  --lighting-button-color:#454545; 
-  --background-image: url(../images/marble-background.jpg)
-
+  --light-button-color:#000000; 
+  --background-image: url(../images/marble-background.jpg);
+  --shadow-color: rgb(110, 110, 110);
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #141414;
     --text-color: #FAF9F6;
-    --lighting-button-color: #FAF9F6;
+    --light-button-color: #FAF9F6;
     --background-image: url(images/inverted-marble-background.jpg);
   }
   .logo {
     filter: invert(1);
   }
 }
-body {
-  display: flex;
-  font-size: calc(0.4rem + 0.7vw);
-  min-height: 100vh;  
-  color: var(--text-color);
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
+
 .dark {
   --background-color:#141414;
   --text-color: #FAF9F6;
-  --lighting-button-color: #FAF9F6;
+  --light-button-color: #FAF9F6;
   --background-image: url(images/inverted-marble-background.jpg);
 }
 
 .logo {
   transition: filter 0.3s ease
 }
+
 .inverted {
   filter: invert(1);
 }
-::selection {
-  background: var(--dark);
-  color: var(--light);
+
+/* Main CSS */
+
+body {
+  display: flex;
+  font-size: calc(0.4rem + 0.7vw);
+  min-height: 100vh;  
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
+
 .banner {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--background-color);
@@ -77,6 +81,7 @@ body {
   max-width: clamp(50px, 25vw, 250px);
   justify-content: space-between;
   transition: color 0.3s ease, background-color 0.3s ease;
+  box-shadow: -2px 0px 10px 0px var(--shadow-color  );
 }
 
 .top-half {
@@ -122,10 +127,9 @@ a:hover {
 .projects {
   display: flex;
   gap: 1vw;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-
+  overflow: visible;
 }
+
 .projects::-webkit-scrollbar {
   display: none;
 }
@@ -137,15 +141,27 @@ a:hover {
   min-width: 37vw;
   padding: calc(0.7vw + 1px);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex: 1;
+
+}
+.project-preview:hover {
+  animation: highlight 0.5s linear forwards;
 }
 
 .project-preview img {
   border-radius: 8px 8px 0 0;
   width: 100%;
 }
-
+@keyframes highlight {
+  from {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.6)); 
+  }
+  to {
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 3px var(--light-button-color))
+  }
+}
 .project-text {
   background-color: var(--background-color);
   padding: 10px;
@@ -154,17 +170,47 @@ a:hover {
   text-align: center;
 }
 
-button {
+#download-button {
   background-color: var(--background-color);
-  border-radius: 5px;
+  border-radius: 8px;
   color: var(--text-color);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+#download-button:hover{
+  animation: pulse 1s infinite ease-in alternate;
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+  to {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--light-button-color);
+  }
 }
 
-button:hover {
-  background-image: url(/images/marble-background.jpg);
-  box-shadow: 5px;
-}
-
+/* Light Button (Dark Mode) */
 .light-button {
-  background-color: var(--lighting-button-color);
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+.light-button:hover {
+  animation: spin 1s linear forwards;
 }
