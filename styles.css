@@ -171,8 +171,10 @@ a:hover {
 }
 
 #download-button {
+  margin-top: 20px;
   background-color: var(--background-color);
   border-radius: 8px;
+  font-weight: 700;
   color: var(--text-color);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
