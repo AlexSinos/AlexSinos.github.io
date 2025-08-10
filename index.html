@@ -6,18 +6,18 @@
     <link rel="preload" as="image" href="/images/marble-background.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <title>Home</title>
   </head>
   <body class ="home-page"></body>
     <div class="banner">
       <div class="top-half">
-        <a href="../" class="logo"> <img src="../images/logo.png" alt="Alex Sinos logo"/> </a>
-        <a href="../projects">PROJECTS</a>
-        <a href="../about">ABOUT</a>
-        <a href="../contact">CONTACT</a>
-        <a href="../blog">BLOG</a>
+        <a href="../" class="logo"> <img src="images/logo.png" alt="Alex Sinos logo"/> </a>
+        <a href="projects">PROJECTS</a>
+        <a href="about">ABOUT</a>
+        <a href="contact">CONTACT</a>
+        <a href="blog">BLOG</a>
       </div>
       <div class="bottom-half">
         <button class="light-button">🌑</button>
@@ -36,7 +36,10 @@
         logo.classList.add('inverted');
         lightButton.textContent = '☀️';
     }
-    function changeTheme() {
+    else {
+      lightButton.textContent - '🌑';
+    }
+    function changeTheme() {  
       const isDark = root.classList.toggle('dark') 
       lightButton.textContent = isDark ? "☀️" : "🌑";
       logo.classList.toggle('inverted');
